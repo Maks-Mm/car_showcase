@@ -19,7 +19,7 @@ const Footer = () => {
             className="object-contain position-relative"
           />
           <p className="text-base text-gray-700">
-            Carhun 2023
+            Carhun 2024
             <br />
             All rights reserved &copy;
           </p>
@@ -40,17 +40,21 @@ const Footer = () => {
               ))}
             </div>
           ))}
-          <div className="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
-            <div className="footer__copyrights-link">
-              <Link href="/" className="text-gray-500">
-              Privacy Policy
-              </Link>
-              <Link href="/" className="text-gray-500">
-             Terms of Use
-              </Link>
+        </div>
+      </div>
+      <div
+        className="flex justify-between items-center flex-wrap 
+          mt-10 border-t border-gray-100 sm:px-16 px-6 py-10"
+      >
+        <p className="mr-2">© mmpryshchepa 2024 React </p>
 
-            </div>
-          </div>
+        <div className="footer__copyrights-link">
+          <Link href="/" className="text-gray-500">
+            Privacy Policy
+          </Link>
+          <Link href="/" className="text-gray-500">
+            Terms of Use
+          </Link>
         </div>
       </div>
     </footer>
