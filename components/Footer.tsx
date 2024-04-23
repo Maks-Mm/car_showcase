@@ -69,5 +69,5 @@ export default Footer;
  
 https://www.youtube.com/watch?v=pUNSHPyVryU
 
-(0.51)
+(0.59)
  */
