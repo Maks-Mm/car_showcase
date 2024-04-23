@@ -11,7 +11,7 @@ const Footer = () => {
     >
       <div className="flex max-md:flex-col flex-wrap
        justify-between gap-5 sm:px-16 px-6 py-10">
-        
+
         <div className="flex flex-col justify-start items-start gap-6">
           <Image
             src="/logo.svg"
@@ -69,5 +69,5 @@ export default Footer;
  
 https://www.youtube.com/watch?v=pUNSHPyVryU
 
-(0.43)
+(0.51)
  */
