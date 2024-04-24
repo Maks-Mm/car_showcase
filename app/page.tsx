@@ -36,7 +36,10 @@ export default async function Home() {
               We have cars
             </section>
           ):(
-            
+            <div className="home__error-container">
+              <h2 className="text-black text-xl font-bold">Oops,no resultat</h2>
+              <p>{allCars?.message}</p>
+            </div>
           )}
 
         </div>
