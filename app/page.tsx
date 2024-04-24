@@ -1,10 +1,18 @@
 import Hero from "@/components/Hero";
 import { CustomFilter, SearchBar } from "@/components";
+import { fetchCars } from "@/utils";
 
-export default function Home() {
+
+
+export default async function Home() {
+  const allCars = await fetchCars();
+
+  const isDataEmpty = !Array.isArray(allCars) || allCars.
+  length <1 || !allCars;
+
+
 
   return (
-    
     <main className="overflow-hidden">
       <Hero />
       <div className="mt-12 padding-x padding-y max-width" id="discover">
@@ -14,7 +22,7 @@ export default function Home() {
         </div>
 
         <div className="home__filters">
-          <div>
+         
             <SearchBar />
 
             <div className="home__filter-container">
@@ -22,8 +30,16 @@ export default function Home() {
               <CustomFilter title="year" />
             </div>
           </div>
+
+          {!isDataEmpty ? (
+            <section>
+              We have cars
+            </section>
+          ):(
+            
+          )}
+
         </div>
-      </div>
     </main>
   );
 }
