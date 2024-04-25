@@ -7,12 +7,12 @@ export async function fetchCars() {
     }
 }
     /*
-    const response = await fetch(`https://
-    cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla',{
+    const response = await fetch('https://api.api-ninjas.com/v1/cars?limit=2&model=',{
+    headers:headers,
       });
 
       const result = await response.json();
 
       result;
-    }
-    */
+    }*/
+  
