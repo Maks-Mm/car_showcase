@@ -1,13 +1,18 @@
+
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import { CarCard, CustomFilter, SearchBar } from "@/components";
+
 import { fetchCars } from "@/utils";
 
+
 export default async function Home() {
+  {/*BlockCode von NinjaCars unsuccesfulleProbe */}
   const allCars = await fetchCars();
-
+  
+  console.log(fetchCars)
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
-
+{/*BlockCode von NinjaCars unsuccesfulleProbe */}
   return (
     <main className="overflow-hidden">
       <Hero />
@@ -25,9 +30,10 @@ export default async function Home() {
             <CustomFilter title="year" />
           </div>
         </div>
-
+{/*BlockCode von NinjaCars unsuccesfulleProbe */}
         {!isDataEmpty ? (
           <section>
+          
             <div className="home__cars-wrapper">
               {allCars?.map((car) => (
                 <CarCard car={car} />
@@ -36,10 +42,12 @@ export default async function Home() {
           </section>
         ) : (
           <div className="home__error-container">
-            <h2 className="text-black text-xl font-bold">Oops,no results</h2>
+            <h2 className="text-black text-xl font-bold">...</h2>
+          
             <h6>{allCars?.message}</h6>
           </div>
         )}
+{/*BlockCode von NinjaCars unsuccesfulleProbe */}
       </div>
     </main>
   );

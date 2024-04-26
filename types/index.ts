@@ -1,6 +1,8 @@
 import {MouseEventHandler} from 'react';
 import { Interface } from 'readline';
 
+{/*BlockCode von NinjaCars unsuccesfulleProbe */}
+
 export interface CustomButtonProps {
     title:string;
     containerStyles?:string;
