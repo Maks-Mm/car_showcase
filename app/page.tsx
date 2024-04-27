@@ -1,54 +1,28 @@
+import React from "react";
+import { Hero, CarCard, SearchBar, CustomFilter } from "@/components";
 
-import Image from "next/image";
-import Hero from "@/components/Hero";
-import { CarCard, CustomFilter, SearchBar } from "@/components";
-
-import { fetchCars } from "@/utils";
-
-
-export default async function Home() {
-  {/*BlockCode von NinjaCars unsuccesfulleProbe */}
-  const allCars = await fetchCars();
-  
-  console.log(fetchCars)
-  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
-{/*BlockCode von NinjaCars unsuccesfulleProbe */}
+const page = () => {
   return (
-    <main className="overflow-hidden">
+    <main>
       <Hero />
+      <CarCard />
+
+      <CustomFilter />
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-container">
           <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
           <p>Explore the cars you might like</p>
         </div>
-
         <div className="home__filters">
           <SearchBar />
-
           <div className="home__filter-container">
             <CustomFilter title="fuel" />
             <CustomFilter title="year" />
           </div>
         </div>
-{/*BlockCode von NinjaCars unsuccesfulleProbe */}
-        {!isDataEmpty ? (
-          <section>
-          
-            <div className="home__cars-wrapper">
-              {allCars?.map((car) => (
-                <CarCard car={car} />
-              ))}
-            </div>
-          </section>
-        ) : (
-          <div className="home__error-container">
-            <h2 className="text-black text-xl font-bold">...</h2>
-          
-            <h6>{allCars?.message}</h6>
-          </div>
-        )}
-{/*BlockCode von NinjaCars unsuccesfulleProbe */}
       </div>
     </main>
   );
-}
+};
+
+export default page;
