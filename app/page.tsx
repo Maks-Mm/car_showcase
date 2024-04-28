@@ -2,6 +2,9 @@ import React from "react";
 import { Hero, CarCard, SearchBar, CustomFilter } from "@/components";
 
 const page = () => {
+
+  
+
   return (
     <main>
       <Hero />
