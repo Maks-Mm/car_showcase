@@ -1,8 +1,9 @@
+import { fetchCars } from "@/utils";
 import React from "react";
 import Image from "next/image";
 import { Hero, SearchBar, CustomFilter, CarCard } from "@/components";
-import { fetchCars } from "@/utils";
 import {fuels,yearsOfProduction} from '@/constants';
+
 
 export default async function Home() {
   const allCars = await fetchCars();

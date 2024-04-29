@@ -1,21 +1,5 @@
-/*const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-		'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
-	}
-};
 
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
-
-*/
+import { CarProps } from "@/types";
 
 
 
@@ -23,27 +7,27 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 	const basePricePerDay = 50; 
 	const mileageFactor = 0.1; 
 	const ageFactor = 0.05; 
-  
+	
 	const mileageRate = city_mpg * mileageFactor;
 	const ageRate = (new Date().getFullYear() - year) * ageFactor;
-  
+	
 	
 	const rentalRatePerDay = basePricePerDay + mileageRate + ageRate;
-  
+	
 	return rentalRatePerDay.toFixed(0);
-  };
+};
 
 export const updateSearchParams = (type: string, value: string) => {
-
+	
 	const searchParams = new URLSearchParams(window.location.search);
-  
+	
 	searchParams.set(type, value);
-  
+	
 	
 	const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
-  
+	
 	return newPathname;
-  };
+};
 
 
 export async function fetchCars() {
@@ -84,7 +68,7 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
 /*
 
-ein Link von dem NinjaResours
+ein Link von dem Ninja...
 
 https://rapidapi.com/apininjas/api/cars-by-api-ninjas?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=referral&utm_campaign=DevRel
 
@@ -93,5 +77,5 @@ vs
 https://api-ninjas.com/api/cars
 
 
-was ist der Unterschied ???
+was ist   ???
 */
