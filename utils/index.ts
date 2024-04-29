@@ -14,33 +14,36 @@ try {
 } catch (error) {
 	console.error(error);
 }
+
 */
 
-/*
 export async function fetchCars() {
 const headers = {
    
 		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
 		'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
 	}
-}
-
-const response = await  fetch ( 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla',
-{
-    headers: headers,
-}
+	
+	const response = await  fetch ( 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla',
+	{
+		headers:headers,
+	}
+		
 );
+const result = await response.json();
+	
 
-const result = await  response.json()
+	
+	return result;
+}
 
-return result;
 
 /*
 
 ein Link von dem NinjaResours
 
 https://rapidapi.com/apininjas/api/cars-by-api-ninjas?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=referral&utm_campaign=DevRel
- 
+
 vs 
 
 https://api-ninjas.com/api/cars
