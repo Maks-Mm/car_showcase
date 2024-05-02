@@ -1,12 +1,17 @@
 "use client";
+/**
+ nach sicheren Erneuerungen ist ein Fehler entstanden ,unmoglich den Browser mit dem Terminal zusammenschlissen 
+ ,warum habe cih keine Ahnung ?
+ Man muss noch mal das Videotutorial nach kucken was ich dann eingeschrieben habe  
+ */
 
 import { Fragment, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Listbox, Transition } from "@headlessui/react";
 
-import { CustomFilterProps} from "@/types";
-//import { updateSearchParams } from "@utils";
+import { CustomFilterProps} from "@/types"; 
+import { updateSearchParams } from "@/utils";//eventuell gibt es hier ein Problem beim Module "/"
 
 export default function CustomFilter({ title, options }: CustomFilterProps) {
   const router = useRouter();
