@@ -3,12 +3,23 @@ import React, { useState } from "react";
 
 import SearchManufacturer from "@/components/SearchManufacturer";
 import { manufacturers } from "@/constants";
+import Image from "next/image";
 
+const SearchButton = ({otherClasses}:{
+  otherClasses:string
+}) => (
+<button type="submit" 
+className={`-ml-3 z-10 ${otherClasses}`}
+>
+  <Image
+  
+  />
 
+</button>
+);
 
 const SearchBar = () => {
-
-  const [manufacturer,setManufacturer] = useState('');
+  const [manufacturer, setManufacturer] = useState("");
 
   const handleSearch = () => {};
 
@@ -18,6 +29,9 @@ const SearchBar = () => {
         <SearchManufacturer
           manufacturer={manufacturer}
           setManufacturer={setManufacturer}
+        />
+        <SearchButton
+        otherClasses="sm:hidden"
         />
       </div>
     </form>
