@@ -7,18 +7,19 @@ import { calculateCarRent, generateCarImageUrl } from "@/utils";
 import { CarProps } from "@/types";
 import CarDetails from "./CarDetails";
 import CustomButton from "./CustomButton";
-
 interface CarCardProps {
   car: CarProps;
 }
 
 const CarCard = ({ car }: CarCardProps) => {
+  
   const { city_mpg, year, make, model, transmission, drive } = car;
-
+  
   const carRent = calculateCarRent(city_mpg, year);
-
+  
   const [isOpen, setIsOpen] = useState(false);
-
+  
+  
   return (
     <div className="car-card group">
       <div className="car-card__content">
@@ -38,7 +39,7 @@ const CarCard = ({ car }: CarCardProps) => {
 
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src="/hero.png"
+          src={generateCarImageUrl(car)}
           alt="car model"
           fill
           priority
@@ -87,5 +88,6 @@ const CarCard = ({ car }: CarCardProps) => {
     </div>
   );
 };
+
 
 export default CarCard;
