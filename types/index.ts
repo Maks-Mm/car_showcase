@@ -1,5 +1,11 @@
 import { MouseEventHandler } from "react";
 
+export interface SearchManuFacturerProps {
+  manufacturer: string;
+  setManuFacturer: (manufacturer: string) => void;
+}
+
+
 export interface CarProps {
   city_mpg: number;
   class: string;
@@ -60,9 +66,4 @@ export interface CustomFilterProps {
 export interface ShowMoreProps {
   pageNumber: number;
   isNext: boolean;
-}
-
-export interface SearchManuFacturerProps {
-  manufacturer: string;
-  setManuFacturer: (manufacturer: string) => void;
 }

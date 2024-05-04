@@ -1,4 +1,5 @@
 "use client";
+
 import { Fragment } from "react";
 import Image from "next/image";
 
@@ -55,7 +56,7 @@ shadow-xl transition-all flex flex-col gab-5">
   onClick={closeModal}
   >
     <Image
-    src="/close.svg"
+    src="/x.svg"
     alt="close"
     width={20}
     height={20}
@@ -64,8 +65,7 @@ shadow-xl transition-all flex flex-col gab-5">
 
   </button>
 
-<div className="flex-1 flex flex-col
-gap-3">
+<div className="flex-1 flex flex-col gap-3">
 <div className="relative w-full h-40
 bg-pattern bg-cover bg-center rounded-lg">
   <Image
