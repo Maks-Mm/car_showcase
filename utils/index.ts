@@ -28,14 +28,15 @@ export const updateSearchParams = (type: string, value: string) => {
 };
 
 
-export async function fetchCars() {
+
+export async function 	fetchCars() {
 const headers = {
    
 	'X-RapidAPI-Key': '049df4321cmsh3324b974496b4ecp195f68jsnb537182429eb',
     'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
 	}
 	
-	const response = await  fetch ( 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=carrera',
+	const response = await  fetch ( 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q3',
 	{
 		headers:headers,
 	}
@@ -62,6 +63,9 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   
 	return `${url}`;
   } 
+
+
+
 
 
 /*

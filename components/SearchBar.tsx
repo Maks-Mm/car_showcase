@@ -1,9 +1,8 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 import SearchManufacturer from "@/components/SearchManufacturer";
-import { manufacturers } from "@/constants";
-import Image from "next/image";
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   <button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
