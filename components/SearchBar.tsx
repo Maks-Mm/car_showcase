@@ -30,7 +30,7 @@ const router = useRouter();
     if(manufacturer === '' && model === '') {
       return alert('Please fill in the search bar')
     }
-    updateSearchParams(model.toLowerCase(),manufacturer.toLowerCase())
+    updateSearchParams(model.toLowerCase(),manufacturer.toLowerCase());
   }
 
   const updateSearchParams = (model:string, manufacturer:string) => {
