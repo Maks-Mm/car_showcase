@@ -8,10 +8,11 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   <button  type='submit' className={`-ml-3 z-10 ${otherClasses}`}>
     <Image
       src="/magnifying-glass-search.png"
-      alt={"magnifying glass"}
+      alt="magnifying glass"
       width={25}
       height={25}
       className="object-contain"
+      style={{ marginLeft: '20px' }}
     />
   </button>
 );
@@ -52,13 +53,13 @@ const SearchBar = () => {
           className="searchbar__input"
           />
             <SearchButton otherClasses='sm:hidden' />
-          </div>
 
-           <SearchButton otherClasses='max-sm:hidden' />
+          </div>
+<br />
+           <SearchButton  otherClasses='max-sm:hidden'   />
     </form>
   );
 };
 
-/*
- */
+
 export default SearchBar;
