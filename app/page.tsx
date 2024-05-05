@@ -40,8 +40,7 @@ export default async function Home() {
             </div>
           </section>
         ) : (
-          // <img src="/hero.png" alt="ddd" />
-          //<img src="icons8-autoverkauf-50.png" alt="nts" />
+        
             <div className="home__error-container">
             <h2 className="text-black text-xl font-bold">Oops,no results</h2>
             <p>{allCars?.message}</p>
@@ -52,14 +51,6 @@ export default async function Home() {
   );
 }
 
-/*(You are not subscribed to this API.)das Problem legt daran dass ich keine API.Site aboniere ,darum habe ich unter den Leih eine Datenlocke 
 
 
 
-Wenn allCars ein Objekt ist, das von der API zurückgegeben wird,
- und Sie sicher sind,
-  dass es ein message-Attribut enthält, könnte das Problem möglicherweise 
-  in der Struktur oder im Inhalt des message-Attributs liegen.
-
-
-*/

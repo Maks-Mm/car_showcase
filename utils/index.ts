@@ -36,7 +36,7 @@ const headers = {
     'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
 	}
 	
-	const response = await  fetch ( 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q3',
+	const response = await  fetch ( 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=hero',
 	{
 		headers:headers,
 	}
@@ -62,7 +62,7 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 	url.searchParams.append('angle', `${angle}`);
   
 	return `${url}`;
-  } 
+  } ;
 
 
 
@@ -70,14 +70,8 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
 /*
 
-ein Link von dem Ninja...
-
 https://rapidapi.com/apininjas/api/cars-by-api-ninjas?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=referral&utm_campaign=DevRel
-
-vs 
 
 https://api-ninjas.com/api/cars
 
-
-was ist   ???
 */
