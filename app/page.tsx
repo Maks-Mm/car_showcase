@@ -4,6 +4,7 @@ import React from "react";
 import { Hero, SearchBar, CustomFilter} from "@/components";
 import {fuels,manufacturers,yearsOfProduction} from '@/constants';
 import CarCard from "@/components/CarCard";
+import ShowMore from "@/components/ShowMore";
 
 
 export default async function Home({ searchParams }) {
@@ -39,12 +40,16 @@ export default async function Home({ searchParams }) {
 
         {!isDataEmpty ? (
           <section>
+            <div className="home__cars-wrapper">
                 {allCars?.map((car) => (
                   <CarCard car={car} />
                 ))}
-
-            <div className="home__cars-wrapper">
             </div>
+
+<ShowMore
+
+/>
+
           </section>
         ) : (
         
@@ -53,6 +58,7 @@ export default async function Home({ searchParams }) {
             <p>{allCars?.message}</p>
           </div>
         )}
+
       </div>
     </main>
   );
