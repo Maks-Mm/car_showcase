@@ -1,11 +1,20 @@
-import React from 'react'
+"use client";
 
-const ShowMore = () => {
+import React from 'react'
+import {useRouter} from 'next/navigation';
+import {ShowMoreProps} from '@/types';
+
+const ShowMore = ({pageNumber,isNext}:ShowMoreProps) => {
+
+    const router = useRouter();
+
+    const handleNavigation = ()=> {}
+
   return (
-    <div>
-      aaa
+    <div className=''>
+ 
     </div>
   )
 }
 
-export default ShowMore
+export default ShowMore;
