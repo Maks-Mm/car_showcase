@@ -18,7 +18,7 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   </button>
 );
 
-const SearchBar = () => {
+const SearchBar = ({setManufacturer,setModel}) => {
   const [searchManufacturer, setSearchManufacturer] = useState("");
   const [searchModel, setSearchModel] = useState("");
 const router = useRouter();
@@ -30,13 +30,13 @@ const router = useRouter();
     if(searchManufacturer === '' && searchModel === '') {
       return alert('Please fill in the search bar')
     }
-  setModel(searchModel)
+  setSearchModel(searchModel)
   setSearchManufacturer(searchManufacturer)
   }
 
   const updateSearchParams = (model:string, manufacturer:string) => {
 const searchParams = new URLSearchParams(window.location.search);
-
+  }
 /*
 if(model){
   searchParams.set('model',model)
@@ -60,8 +60,9 @@ router.push(newPathname)
       <div className="searchbar__item">
 
         <SearchManufacturer
-          manufacturer={manufacturer}
-          setManufacturer={setManufacturer}
+
+         selected={searchManufacturer}
+          setSelected={setSearchManufacturer}
         />
          <SearchButton otherClasses='sm:hidden' />
          </div>
@@ -79,8 +80,8 @@ router.push(newPathname)
         <input
           type="text"
           name="model"
-          value={model}
-          onChange={(e) => setModel(e.target.value)}
+          value={searchModel}
+          onChange={(e) => setSearchModel(e.target.value)}
           placeholder="auto search"
           className="searchbar__input"
           />

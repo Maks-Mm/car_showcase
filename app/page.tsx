@@ -23,7 +23,7 @@ const [fuel,setFuel] = useState("");
 const[year,setYear] = useState(2022);
 
 const[limit,setLimit] = useState(10);
-/*
+
 
 const getCars = async () => {
 
@@ -46,9 +46,10 @@ try{
 
 }
 }
-*/
+
 useEffect(()=> {
-  
+  console.log(fuel,year,limit,manufacturer,model)
+  getCars();
 },[fuel,year,limit,manufacturer,model])
 
 /*
