@@ -9,12 +9,12 @@ import SearchManufacturer from "./SearchManufacturer";
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   <button type='submit' className={`-ml-3 z-10 ${otherClasses}`}>
     <Image
-      src="/magnifying-glass .svg"
+      src="/magnifying-glass-search.png"
       alt="magnifying-glass .svg"
-      width={40}
-      height={40}
+      width={25}
+      height={25}
       className='object-contain'
-      style={{marginLeft:'10px'}}
+      style={{marginLeft:'20px'}}
     />
   </button>
 );
@@ -69,10 +69,11 @@ const SearchBar = () => {
       </div>
       <div className='searchbar__item'>
         <Image
-          src='/model-icon.png'
-          width={25}
-          height={25}
-          className='absolute w-[20px] h-[20px] ml-4'
+          src='/icons8-auto-67.png'
+          width={45}
+          height={45}
+          className='absolute w-[40px] h-[40px] ml-0'
+ 
           alt='car model'
         />
         <input
@@ -80,8 +81,9 @@ const SearchBar = () => {
           name='model'
           value={model}
           onChange={(e) => setModel(e.target.value)}
-          placeholder='auto search'
+          placeholder=''
           className='searchbar__input'
+         
         />
         <SearchButton otherClasses='sm:hidden' />
       </div>

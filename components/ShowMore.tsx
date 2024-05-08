@@ -13,6 +13,7 @@ const ShowMore = ({pageNumber,isNext,setLimit}:ShowMoreProps) => {
         const newPathName = updateSearchParams("limit",`${newLimit}`);
 
         setLimit(newLimit)
+        console.log(newPathName)
     }
 
   return (
