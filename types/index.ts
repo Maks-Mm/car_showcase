@@ -1,11 +1,5 @@
 import { MouseEventHandler } from "react";
 
-export interface SearchManuFacturerProps {
-  manufacturer: string;
-  setManuFacturer: (manufacturer: string) => void;
-}
-
-
 export interface CarProps {
   city_mpg: number;
   class: string;
@@ -21,6 +15,13 @@ export interface CarProps {
   year: number;
 }
 
+export interface FilterProps {
+  manufacturer?: string;
+  year?: number;
+  model?: string;
+  limit?: number;
+  fuel?: string;
+}
 
 export interface HomeProps {
   searchParams: FilterProps;
@@ -61,10 +62,7 @@ export interface ShowMoreProps {
   isNext: boolean;
 }
 
-export interface FilterProps {
+export interface SearchManuFacturerProps {
   manufacturer: string;
-  year: number;
-  model: string;
-  limit: number;
-  fuel: string;
+  setManuFacturer: (manufacturer: string) => void;
 }

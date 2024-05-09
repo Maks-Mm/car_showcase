@@ -9,7 +9,7 @@ import { CustomFilterProps } from "@/types";
 import { updateSearchParams } from "@/utils";
 
 export default function CustomFilter({ title, options }: CustomFilterProps) {
-  const router = useRouter();
+  const router = useRouter(); 
   const [selected, setSelected] = useState(options[0]); 
 
   const handleUpdateParams = (e: { title: string; value: string }) => {
