@@ -51,9 +51,9 @@ const result = await response.json();
 	
 	return result;
 }
-
+//https://cdn.imagin.studio/getimage
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
-	const url = new URL("https://cdn.imagin.studio/getimage");
+	const url = new URL("https://images.prismic.io/shacarlacca/MDkyZThhMGUtOGI4MC00N2I2LWE2M2EtYWVjYmJmOTJkYmEw_630bbcc6-34f4-40ab-951a-dea4e721e4e7rulecf-450.png?auto=compress,format&rect=0,0,450,300&w=450&h=300");
 	const { make, model, year } = car;
   
 	url.searchParams.append('customer', process.env.NEXT_PUBLIC_IMAGIN_API_KEY || '');

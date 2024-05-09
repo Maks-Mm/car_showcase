@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images:{
-        domains:["cdn.imagin.studio"]
+       domains:["images.prismic.io"],
+       domains:["images.prismic.io"]
+       
     }
 };
 
