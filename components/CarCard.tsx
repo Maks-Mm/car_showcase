@@ -13,7 +13,9 @@ interface CarCardProps {
 }
 
 const CarCard = ({ car }: CarCardProps) => {
-  const { city_mpg, year, make, model, transmission, drive } = car;
+  const { city_mpg, year, make, model, transmission, drive,img } = car;
+
+  console.log(img)
 
   const carRent = calculateCarRent(city_mpg, year);
 
@@ -37,13 +39,15 @@ const CarCard = ({ car }: CarCardProps) => {
       </p>
 
       <div className="relative w-full h-40 my-3 object-contain">
-        <Image
-          src={generateCarImageUrl(car)}
-          alt="car model"
-          fill
-          priority
-          className="object-contain"
-        />
+
+      <Image
+              src="/steering-wheel.svg"
+              width={20}
+              height={20}
+              alt="steering"
+            />
+
+       
       </div>
 
       <div className="relative flex w-full mt-2">
