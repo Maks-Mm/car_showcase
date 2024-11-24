@@ -1,6 +1,26 @@
 import { MouseEventHandler } from "react";
 
-export interface CarProps {
+interface CarProps {
+  manufacturer: string;
+  year: number;
+  model: string;
+  limit: number;
+  fuel: string;
+  fuel_type: string;  // Hier fehlt in deinem Objekt der Wert
+  markets: string[];   // Auch hier fehlt der Wert
+  drive: string;
+  class: string;
+  transmission: string;
+  cylinders: number;
+  displacement: number;
+  city_mpg: number;
+  combination_mpg: number;
+  highway_mpg: number;
+  img: string;
+}
+
+//Probecodeblock fur CarCard
+ export interface Props {
   city_mpg: number;
   class: string;
   combination_mpg: number;
@@ -14,7 +34,7 @@ export interface CarProps {
   transmission: string;
   year: number;
   img:string;
-}
+ }
 
 export interface FilterProps {
   manufacturer?: string;

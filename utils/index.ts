@@ -1,3 +1,4 @@
+
 import { CarProps, FilterProps } from "@/types";
 
 export const calculateCarRent = (city_mpg: number, year: number) => {
@@ -34,8 +35,8 @@ const classes = ["two seater", "sedan", "suv", "truck"];
 const transmissions = ["a", "m"];
 const cylindersOptions = [4, 6, 8];
 const displacementOptions = [1.8, 2.0, 2.5, 3.0, 3.5];
-const img = ["https://media.istockphoto.com/id/1707927462/de/foto/roadtrip-romantik.jpg?s=2048x2048&w=is&k=20&c=9evrtyoh_X-bkfr3F3Fhd1Kju3q5pU3whGY3hEsCWIs=","https://cdn.pixabay.com/photo/2015/01/19/13/51/car-604019_1280.jpg","https://media.istockphoto.com/id/170450723/de/foto/sports-car.jpg?s=2048x2048&w=is&k=20&c=cTpT66iKp5NICPjytE5fdsD0Pkc-2rttYVv6wxE3OIw="];
-
+const img = ["autoBmw.avif"];
+//https://media.istockphoto.com/id/1707927462/de/foto/roadtrip-romantik.jpg?s=2048x2048&w=is&k=20&c=9evrtyoh_X-bkfr3F3Fhd1Kju3q5pU3whGY3hEsCWIs=","https://cdn.pixabay.com/photo/2015/01/19/13/51/car-604019_1280.jpg","https://media.istockphoto.com/id/170450723/de/foto/sports-car.jpg?s=2048x2048&w=is&k=20&c=cTpT66iKp5NICPjytE5fdsD0Pkc-2rttYVv6wxE3OIw=
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
@@ -96,7 +97,7 @@ export async function fetchCars(filters: FilterProps) {
     "X-RapidAPI-Key": "049df4321cmsh3324b974496b4ecp195f68jsnb537182429eb",
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
-
+//kommt car von hier  ?
   const car = {
 	city_mpg: 24,
 	class: "two seater",
