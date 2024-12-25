@@ -2,17 +2,19 @@ import { fetchCars } from "@/utils";
 import { HomeProps } from "@/types";
 import { fuels, yearsOfProduction } from "@/constants";
 import { CarCard, ShowMore, SearchBar, CustomFilter, Hero } from "@/components";
+import ParentComponent from "@/components/ParentComponent";
+
 
 export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
-    year: searchParams.year || 2022,
+    year: searchParams.year ? Number(searchParams.year) : new Date().getFullYear(),
     fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
+    limit: searchParams.limit ? Number(searchParams.limit) : 10,
     model: searchParams.model || "",
   });
 
-  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1;
 
   return (
     <main className="overflow-hidden">
@@ -21,11 +23,11 @@ export default async function Home({ searchParams }: HomeProps) {
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-container">
           <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
-          <p>find the car you like</p>
+          <p>Find the car you like</p>
         </div>
 
         <div className="home__filters">
-          <SearchBar />
+          <ParentComponent/>
 
           <div className="home__filter-container">
             <CustomFilter title="fuel" options={fuels} />
@@ -36,8 +38,8 @@ export default async function Home({ searchParams }: HomeProps) {
         {!isDataEmpty ? (
           <section>
             <div className="home__cars-wrapper">
-              {allCars?.map((car) => (
-                <CarCard car={car} />
+              {allCars.map((car) => (
+                <CarCard key={car.id} car={car} />
               ))}
             </div>
 
@@ -49,7 +51,7 @@ export default async function Home({ searchParams }: HomeProps) {
         ) : (
           <div className="home__error-container">
             <h2 className="text-black text-xl font-bold">Oops, no results</h2>
-            <p>{allCars?.message}</p>
+            <p>No cars found</p>
           </div>
         )}
       </div>
