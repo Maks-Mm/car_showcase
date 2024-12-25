@@ -30,11 +30,11 @@ export interface HomeProps {
 export interface CarCardProps {
   model: string;
   make: string;
-  mpg: number;
+  cityMPG: number;
+  highwayMPG: number;
   transmission: string;
   year: number;
   drive: string;
-  cityMPG: number;
 }
 
 export interface CustomButtonProps {
@@ -62,7 +62,7 @@ export interface ShowMoreProps {
   isNext: boolean;
 }
 
-export interface SearchManuFacturerProps {
+export interface SearchManufacturerProps {
   manufacturer: string;
-  setManuFacturer: (manufacturer: string) => void;
+  setManufacturer: (manufacturer: string) => void; // Corrected spelling
 }
