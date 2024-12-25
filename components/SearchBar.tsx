@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Markiert die Datei als Client-Komponente
 
 import Image from "next/image";
 import React, { useState } from "react";
@@ -7,14 +7,14 @@ import { useRouter } from "next/navigation";
 import SearchManufacturer from "./SearchManufacturer";
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
-  <button type='submit' className={`-ml-3 z-10 ${otherClasses}`}>
+  <button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
     <Image
       src="/magnifying-glass-search.png"
       alt="magnifying-glass .svg"
       width={25}
       height={25}
-      className='object-contain'
-      style={{marginLeft:'20px'}}
+      className="object-contain"
+      style={{ marginLeft: "20px" }}
     />
   </button>
 );
@@ -36,10 +36,8 @@ const SearchBar = () => {
   };
 
   const updateSearchParams = (model: string, manufacturer: string) => {
-
     const searchParams = new URLSearchParams(window.location.search);
 
-    
     if (model) {
       searchParams.set("model", model);
     } else {
@@ -49,45 +47,42 @@ const SearchBar = () => {
     if (manufacturer) {
       searchParams.set("manufacturer", manufacturer);
     } else {
-       searchParams.delete("manufacturer");
+      searchParams.delete("manufacturer");
     }
 
-  
     const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
 
     router.push(newPathname);
   };
 
   return (
-    <form className='searchbar' onSubmit={handleSearch}>
-      <div className='searchbar__item'>
+    <form className="searchbar" onSubmit={handleSearch}>
+      <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={manufacturer}
           setManuFacturer={setManuFacturer}
         />
-        <SearchButton otherClasses='sm:hidden' />
+        <SearchButton otherClasses="sm:hidden" />
       </div>
-      <div className='searchbar__item'>
+      <div className="searchbar__item">
         <Image
-          src='/icons8-auto-67.png'
+          src="/icons8-auto-67.png"
           width={45}
           height={45}
-          className='absolute w-[40px] h-[40px] ml-0'
- 
-          alt='car model'
+          className="absolute w-[40px] h-[40px] ml-0"
+          alt="car model"
         />
         <input
-          type='text'
-          name='model'
+          type="text"
+          name="model"
           value={model}
           onChange={(e) => setModel(e.target.value)}
-          placeholder=''
-          className='searchbar__input'
-         
+          placeholder=""
+          className="searchbar__input"
         />
-        <SearchButton otherClasses='sm:hidden' />
+        <SearchButton otherClasses="sm:hidden" />
       </div>
-      <SearchButton otherClasses='max-sm:hidden' />
+      <SearchButton otherClasses="max-sm:hidden" />
     </form>
   );
 };
