@@ -1,9 +1,8 @@
-"use client"; // Markiert die Datei als Client-Komponente
+"use client";
 
 import Image from "next/image";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-
 import SearchManufacturer from "./SearchManufacturer";
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
@@ -50,8 +49,9 @@ const SearchBar = () => {
       searchParams.delete("manufacturer");
     }
 
-    const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
-
+    const newPathname = `${
+      window.location.pathname
+    }?${searchParams.toString()}`;
     router.push(newPathname);
   };
 
