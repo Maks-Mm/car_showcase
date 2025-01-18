@@ -9,7 +9,7 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   <button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
     <Image
       src="/magnifying-glass-search.png"
-      alt="magnifying-glass .svg"
+      alt="Search icon"
       width={25}
       height={25}
       className="object-contain"
@@ -19,9 +19,8 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
 );
 
 const SearchBar = () => {
-  const [manufacturer, setManuFacturer] = useState("");
+  const [manufacturer, setManufacturer] = useState(""); // Fixed typo: setManuFacturer to setManufacturer
   const [model, setModel] = useState("");
-
   const router = useRouter();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
@@ -49,9 +48,7 @@ const SearchBar = () => {
       searchParams.delete("manufacturer");
     }
 
-    const newPathname = `${
-      window.location.pathname
-    }?${searchParams.toString()}`;
+    const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
     router.push(newPathname);
   };
 
@@ -60,7 +57,7 @@ const SearchBar = () => {
       <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={manufacturer}
-          setManuFacturer={setManuFacturer}
+          setManufacturer={setManufacturer} // Fixed typo here as well
         />
         <SearchButton otherClasses="sm:hidden" />
       </div>
@@ -70,15 +67,16 @@ const SearchBar = () => {
           width={45}
           height={45}
           className="absolute w-[40px] h-[40px] ml-0"
-          alt="car model"
+          alt="Car model icon"
         />
         <input
           type="text"
           name="model"
           value={model}
           onChange={(e) => setModel(e.target.value)}
-          placeholder=""
+          placeholder="Enter car model" // Added placeholder text
           className="searchbar__input"
+          aria-label="Car model" // Added accessibility feature
         />
         <SearchButton otherClasses="sm:hidden" />
       </div>
