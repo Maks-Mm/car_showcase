@@ -1,10 +1,10 @@
+// layout.tsx
+import React from "react"; // Import React
 import "./globals.css";
-
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Navbar, Footer,} from "@/components";
-
+import { Navbar, Footer } from "@/components";
+import { MyProvider } from "@/app/MyContext"; // Adjust the path as necessary
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative">
-       
-        <Navbar />
-        {children}
-        <Footer />
-        
+        <MyProvider> {/* Wrap the components with MyProvider */}
+          <Navbar />
+          {children}
+          <Footer />
+        </MyProvider>
       </body>
     </html>
   );
